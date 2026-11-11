@@ -1,0 +1,1579 @@
+
+/* =========================================
+   EDGAR GIOVANNI — CREATIVE PORTFOLIO
+   STYLE.CSS
+========================================= */
+
+
+/* =========================================
+   01. VARIABLES Y CONFIGURACIÓN GENERAL
+========================================= */
+
+:root {
+    --black: #101216;
+    --black-soft: #15191f;
+    --black-light: #1b2229;
+
+    --grey: #808A96;
+    --grey-light: #b5bec8;
+
+    --cyan: #83D5F2;
+    --white: #FFFFFF;
+
+    --glass: rgba(255, 255, 255, 0.045);
+    --glass-border: rgba(255, 255, 255, 0.12);
+
+    --cyan-soft: rgba(131, 213, 242, 0.10);
+    --cyan-border: rgba(131, 213, 242, 0.25);
+
+    --transition: 0.35s ease;
+    --section-padding: 130px 10%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+body,
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+button,
+a {
+    outline-offset: 5px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--cyan);
+}
+
+::selection {
+    background: var(--cyan);
+    color: var(--black);
+}
+
+
+/* =========================================
+   02. ENCABEZADO Y NAVEGACIÓN
+========================================= */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    background: rgba(16, 18, 22, 0.12);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+.brand span {
+    color: var(--cyan);
+}
+
+.brand small {
+    margin-top: 5px;
+
+    color: var(--grey);
+
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: var(--grey-light);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: color var(--transition);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--cyan);
+
+    transition: width var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.header-contact {
+    padding: 11px 18px;
+
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    transition: all var(--transition);
+}
+
+.header-contact span {
+    margin-left: 8px;
+    color: var(--cyan);
+}
+
+.header-contact:hover {
+    border-color: var(--cyan);
+    background: var(--cyan-soft);
+}
+
+
+/* =========================================
+   03. PORTADA PRINCIPAL
+========================================= */
+
+.hero-section {
+    position: relative;
+
+    min-height: 780px;
+    height: 100vh;
+    max-height: 1100px;
+
+    padding: 150px 7% 100px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 48%,
+            rgba(131, 213, 242, 0.075),
+            transparent 45%
+        ),
+        var(--black);
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 48%;
+    max-width: 600px;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    margin-top: 25px;
+
+    font-size: clamp(42px, 5.2vw, 76px);
+    line-height: 1.08;
+
+    font-weight: 500;
+    letter-spacing: -3px;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    color: var(--cyan);
+
+    font-weight: 700;
+}
+
+.hero-description {
+    max-width: 420px;
+
+    margin-top: 25px;
+
+    color: var(--grey-light);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.primary-button {
+    padding: 14px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    background: var(--cyan);
+    color: var(--black);
+
+    border-radius: 3px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: all var(--transition);
+}
+
+.primary-button:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+.primary-button span {
+    font-size: 16px;
+}
+
+.secondary-button {
+    color: var(--grey-light);
+    font-size: 11px;
+
+    transition: color var(--transition);
+}
+
+.secondary-button:hover {
+    color: var(--cyan);
+}
+
+.hero-caption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 75px;
+
+    color: var(--grey);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.caption-line {
+    width: 35px;
+    height: 1px;
+
+    background: var(--cyan);
+}
+
+.hero-bottom {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    bottom: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--grey);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    z-index: 6;
+}
+
+.hero-bottom a {
+    transition: color var(--transition);
+}
+
+.hero-bottom a:hover {
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   04. ESCENARIO DE LA CÁMARA 3D
+========================================= */
+
+.camera-container {
+    position: absolute;
+
+    top: 100px;
+    right: 3%;
+    bottom: 45px;
+
+    width: 55%;
+
+    z-index: 2;
+
+    isolation: isolate;
+}
+
+/* Área donde Three.js dibuja la cámara */
+
+#camera-scene {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    cursor: grab;
+
+    z-index: 1;
+
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#camera-scene:active {
+    cursor: grabbing;
+}
+
+#camera-scene canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    outline: none;
+}
+
+/* Instrucción de interacción */
+
+.camera-instruction {
+    position: absolute;
+
+    right: 8%;
+    bottom: 20px;
+
+    color: var(--grey);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   05. PANELES DE CRISTAL
+========================================= */
+
+.glass {
+    background: rgba(16, 18, 22, 0.78);
+
+    border: 1px solid rgba(131, 213, 242, 0.2);
+    border-radius: 10px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   06. INDICADOR HOVER DE LA CÁMARA
+========================================= */
+
+#hover {
+    position: absolute;
+
+    display: none;
+
+    padding: 9px 14px;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   07. PANEL DE INFORMACIÓN 3D
+========================================= */
+
+#panel {
+    position: absolute;
+
+    top: 50%;
+    right: 25px;
+
+    width: min(300px, 85%);
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(20px, -50%);
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+
+    z-index: 20;
+}
+
+#panel.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(0, -50%);
+}
+
+#p-kicker {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--cyan);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#p-title {
+    margin-bottom: 12px;
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#p-text {
+    color: var(--grey-light);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+#p-list {
+    margin: 18px 0;
+    padding-left: 17px;
+
+    color: var(--grey-light);
+
+    font-size: 11px;
+}
+
+#p-list li {
+    margin: 7px 0;
+}
+
+#p-list li::marker {
+    color: var(--cyan);
+}
+
+#close {
+    margin-top: 5px;
+    padding: 9px 16px;
+
+    background: transparent;
+
+    border: 1px solid var(--glass-border);
+    border-radius: 3px;
+
+    color: var(--white);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: all var(--transition);
+}
+
+#close:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   08. MENÚ INTERACTIVO DE LA CÁMARA
+========================================= */
+
+#menu {
+    position: absolute;
+
+    left: 50%;
+    bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 7px;
+
+    transform: translateX(-50%);
+
+    z-index: 15;
+
+    white-space: nowrap;
+}
+
+#menu button {
+    padding: 9px 13px;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 5px;
+
+    color: var(--grey-light);
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+    transition: all var(--transition);
+}
+
+#menu button:hover,
+#menu button.active {
+    background: rgba(131, 213, 242, 0.12);
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   09. MENSAJE DE FALLBACK WEBGL
+========================================= */
+
+#fallback {
+    display: none;
+
+    position: absolute;
+    inset: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: var(--black-soft);
+
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+
+    color: var(--grey-light);
+
+    font-size: 13px;
+    text-align: center;
+
+    z-index: 30;
+}
+
+#fallback p {
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   10. ESTILOS GENERALES DE SECCIONES
+========================================= */
+
+.content-section {
+    position: relative;
+
+    padding: var(--section-padding);
+}
+
+.section-heading {
+    margin-bottom: 65px;
+}
+
+.section-heading h2,
+.contact-section h2 {
+    margin-top: 20px;
+
+    font-size: clamp(35px, 4.5vw, 60px);
+    font-weight: 500;
+
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.section-heading h2 span,
+.contact-section h2 span {
+    display: block;
+
+    color: var(--cyan);
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   11. SECCIÓN SOBRE MÍ
+========================================= */
+
+.about-section {
+    background: var(--black-soft);
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+.about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-number {
+    color: var(--cyan);
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.about-intro h3 {
+    max-width: 350px;
+
+    font-size: 27px;
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+.about-description p {
+    margin-bottom: 20px;
+
+    color: var(--grey-light);
+
+    font-size: 14px;
+    line-height: 2;
+}
+
+.about-divider {
+    height: 1px;
+
+    margin: 70px 0 30px;
+
+    background: var(--glass-border);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.skills-list span {
+    padding: 10px 17px;
+
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+
+    color: var(--grey-light);
+
+    font-size: 10px;
+
+    transition: all var(--transition);
+}
+
+.skills-list span:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+
+    background: var(--cyan-soft);
+}
+
+
+/* =========================================
+   12. SECCIÓN PROYECTOS
+========================================= */
+
+.projects-section {
+    background: var(--black);
+}
+
+.heading-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 40px;
+}
+
+.heading-flex p {
+    max-width: 330px;
+
+    color: var(--grey);
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* Filtros */
+
+.project-categories {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+.category-button {
+    padding: 10px 17px;
+
+    background: transparent;
+
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+
+    color: var(--grey-light);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: all var(--transition);
+}
+
+.category-button:hover,
+.category-button.active {
+    border-color: var(--cyan);
+
+    background: rgba(131, 213, 242, 0.08);
+
+    color: var(--cyan);
+}
+
+/* Cuadrícula */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 50px 25px;
+}
+
+.project-card {
+    min-width: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 6px;
+}
+
+/* Imágenes */
+
+.project-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+
+    background-color: var(--black-light);
+
+    transition: border-color var(--transition);
+}
+
+.project-card:hover .project-image {
+    border-color: rgba(131, 213, 242, 0.5);
+}
+
+.project-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-placeholder::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(131, 213, 242, 0.18),
+            transparent 55%
+        );
+
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-placeholder::before {
+    transform: scale(1.3);
+}
+
+/* Fondos provisionales */
+
+.photography-placeholder {
+    background:
+        linear-gradient(135deg, #252d34, #12171d);
+}
+
+.video-placeholder {
+    background:
+        linear-gradient(135deg, #18232d, #101216);
+}
+
+.graphic-placeholder {
+    background:
+        linear-gradient(135deg, #292534, #13151b);
+}
+
+.model-placeholder {
+    background:
+        linear-gradient(135deg, #1b303b, #11151b);
+}
+
+/* Textos de las tarjetas */
+
+.placeholder-number {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+}
+
+.placeholder-label {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+/* Información del proyecto */
+
+.project-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 18px;
+}
+
+.project-info h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.project-info p {
+    margin-top: 5px;
+
+    color: var(--grey);
+
+    font-size: 10px;
+}
+
+.project-arrow {
+    color: var(--cyan);
+
+    font-size: 20px;
+
+    transition: transform var(--transition);
+}
+
+.project-card:hover .project-arrow {
+    transform: translate(4px, -4px);
+}
+
+
+/* =========================================
+   13. SECCIÓN SERVICIOS
+========================================= */
+
+.services-section {
+    background: var(--black-soft);
+}
+
+.services-list {
+    border-top: 1px solid var(--glass-border);
+}
+
+.service-item {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 30px;
+
+    gap: 25px;
+
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid var(--glass-border);
+
+    transition: padding var(--transition);
+}
+
+.service-item:hover {
+    padding-left: 12px;
+}
+
+.service-number {
+    color: var(--cyan);
+
+    font-size: 11px;
+}
+
+.service-description h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.service-description p {
+    max-width: 500px;
+
+    margin-top: 7px;
+
+    color: var(--grey);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.service-arrow {
+    color: var(--cyan);
+
+    font-size: 19px;
+
+    transition: transform var(--transition);
+}
+
+.service-item:hover .service-arrow {
+    transform: translate(4px, -4px);
+}
+
+
+/* =========================================
+   14. SECCIÓN CONTACTO
+========================================= */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            ellipse at 70% 50%,
+            rgba(131, 213, 242, 0.09),
+            transparent 50%
+        ),
+        var(--black);
+}
+
+.contact-section h2 {
+    max-width: 800px;
+
+    margin-top: 25px;
+}
+
+.contact-section > p {
+    max-width: 450px;
+
+    margin-top: 25px;
+
+    color: var(--grey-light);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 35px;
+    padding: 16px 23px;
+
+    background: var(--cyan);
+
+    border-radius: 3px;
+
+    color: var(--black);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: all var(--transition);
+}
+
+.contact-button:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+.contact-button span {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   15. PIE DE PÁGINA
+========================================= */
+
+.site-footer {
+    min-height: 100px;
+
+    padding: 25px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--glass-border);
+
+    background: var(--black-soft);
+}
+
+.footer-brand {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: color var(--transition);
+}
+
+.footer-brand:hover {
+    color: var(--cyan);
+}
+
+.site-footer span,
+.back-to-top {
+    color: var(--grey);
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.back-to-top {
+    transition: color var(--transition);
+}
+
+.back-to-top:hover {
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   16. ANIMACIONES DE APARICIÓN
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .hero-content {
+        animation: fade-up 0.9s ease both;
+    }
+
+    .camera-container {
+        animation: fade-in 1.2s ease both;
+    }
+
+}
+
+@keyframes fade-up {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fade-in {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   17. TABLETS Y PANTALLAS MEDIANAS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .main-navigation {
+        gap: 18px;
+    }
+
+    .hero-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero-content {
+        width: 52%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(42px, 5.5vw, 62px);
+    }
+
+    .camera-container {
+        right: 0;
+        width: 55%;
+    }
+
+    .content-section {
+        padding: 110px 7%;
+    }
+
+    .about-content {
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================
+   18. MÓVILES
+========================================= */
+
+@media (max-width: 760px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .site-header {
+        height: 80px;
+        padding: 0 6%;
+    }
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .brand small {
+        font-size: 7px;
+    }
+
+    .main-navigation {
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 6%;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        overflow-x: auto;
+
+        background: rgba(16, 18, 22, 0.95);
+
+        border-bottom: 1px solid var(--glass-border);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .nav-link {
+        flex-shrink: 0;
+        font-size: 10px;
+    }
+
+    .header-contact {
+        padding: 9px 12px;
+        font-size: 9px;
+    }
+
+    /* PORTADA */
+
+    .hero-section {
+        min-height: 850px;
+
+        height: auto;
+        max-height: none;
+
+        padding: 150px 6% 90px;
+
+        display: block;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(40px, 11vw, 60px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        max-width: 340px;
+        font-size: 12px;
+    }
+
+    .hero-caption {
+        margin-top: 35px;
+    }
+
+    /* CÁMARA 3D */
+
+    .camera-container {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+
+        width: 100%;
+        height: 390px;
+
+        margin-top: 15px;
+    }
+
+    #camera-scene {
+        width: 100%;
+        height: 100%;
+    }
+
+    #panel {
+        top: 50%;
+        right: 10px;
+
+        width: min(270px, 90%);
+
+        padding: 18px;
+    }
+
+    #menu {
+        max-width: 100%;
+
+        gap: 2px;
+    }
+
+    #menu button {
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    .camera-instruction {
+        right: 0;
+        bottom: 0;
+
+        font-size: 8px;
+    }
+
+    .hero-bottom {
+        left: 6%;
+        right: 6%;
+        bottom: 20px;
+
+        font-size: 7px;
+    }
+
+    /* SECCIONES */
+
+    .content-section {
+        padding: 90px 7%;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2,
+    .contact-section h2 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    /* SOBRE MÍ */
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-intro h3 {
+        font-size: 23px;
+    }
+
+    .about-description p {
+        font-size: 12px;
+    }
+
+    .about-divider {
+        margin: 40px 0 25px;
+    }
+
+    .skills-list {
+        gap: 8px;
+    }
+
+    .skills-list span {
+        padding: 8px 12px;
+        font-size: 9px;
+    }
+
+    /* PROYECTOS */
+
+    .heading-flex {
+        display: block;
+    }
+
+    .heading-flex p {
+        margin-top: 20px;
+    }
+
+    .project-categories {
+        gap: 7px;
+    }
+
+    .category-button {
+        padding: 9px 12px;
+        font-size: 9px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .project-info h3 {
+        font-size: 13px;
+    }
+
+    /* SERVICIOS */
+
+    .service-item {
+        grid-template-columns: 35px 1fr 20px;
+
+        gap: 12px;
+
+        padding: 27px 0;
+    }
+
+    .service-description h3 {
+        font-size: 16px;
+    }
+
+    .service-description p {
+        font-size: 11px;
+    }
+
+    /* CONTACTO */
+
+    .contact-section > p {
+        font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+        padding: 25px 6%;
+        flex-wrap: wrap;
+    }
+
+    .site-footer span {
+        order: 3;
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   19. MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .header-contact {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-actions {
+        gap: 15px;
+    }
+
+    .primary-button {
+        padding: 12px 15px;
+    }
+
+    .camera-container {
+        height: 340px;
+    }
+
+    #menu button {
+        padding: 7px 6px;
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================
+   20. ACCESIBILIDAD Y MOVIMIENTO REDUCIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

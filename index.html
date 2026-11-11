@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- CONFIGURACIÓN GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edgar Giovanni | Creative Portfolio</title>
+
+    <meta name="description" content="Portafolio creativo de Edgar Giovanni. Fotografía, diseño gráfico y producción audiovisual.">
+
+    <!-- TIPOGRAFÍA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         01. ENCABEZADO Y NAVEGACIÓN
+    ========================================== -->
+
+    <header class="site-header">
+
+        <a href="#inicio" class="brand">
+            EDGAR <span>GIOVANNI</span>
+            <small>CREATIVE PORTFOLIO</small>
+        </a>
+
+        <nav class="main-navigation" id="primary-nav">
+
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+            <a href="#proyectos" class="nav-link">Proyectos</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+
+        </nav>
+
+        <a href="#contacto" class="header-contact">
+            Hablemos <span>↗</span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             02. PORTADA / EXPERIENCIA 3D
+        ========================================== -->
+
+        <section class="hero-section" id="inicio">
+
+            <div class="hero-content">
+
+                <span class="section-label">
+                    PORTAFOLIO CREATIVO / 2026
+                </span>
+
+                <h1>
+                    Creatividad que
+                    <span>se convierte</span>
+                    en experiencia.
+                </h1>
+
+                <p class="hero-description">
+                    Explora mi universo creativo a través del diseño,
+                    la fotografía y la producción audiovisual.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#proyectos" class="primary-button">
+                        Explorar proyectos <span>↗</span>
+                    </a>
+
+                    <a href="#sobre-mi" class="secondary-button">
+                        Conóceme
+                    </a>
+
+                </div>
+
+                <div class="hero-caption">
+                    <span class="caption-line"></span>
+                    <span>INTERACTIVE EXPERIENCE</span>
+                </div>
+
+            </div>
+
+
+            <!-- ESCENARIO DE LA CÁMARA 3D -->
+
+            <div class="camera-container">
+
+                <div id="camera-scene"></div>
+
+                <div id="fallback">
+                    <p>
+                        Tu navegador no pudo iniciar WebGL.
+                        <br>
+                        Usa el menú para explorar las secciones.
+                    </p>
+                </div>
+
+                <div id="hover" class="glass"></div>
+
+                <!-- PANEL DE INFORMACIÓN DE LA CÁMARA -->
+
+                <aside id="panel" class="glass" aria-live="polite">
+
+                    <small id="p-kicker"></small>
+
+                    <h2 id="p-title"></h2>
+
+                    <p id="p-text"></p>
+
+                    <ul id="p-list"></ul>
+
+                    <button id="close" type="button">
+                        Cerrar
+                    </button>
+
+                </aside>
+
+                <!-- MENÚ GENERADO POR JAVASCRIPT -->
+
+                <nav class="glass" id="menu" aria-label="Explorar cámara"></nav>
+
+                <span class="camera-instruction">
+                    ARRASTRA PARA EXPLORAR
+                </span>
+
+            </div>
+
+            <div class="hero-bottom">
+                <span>DISEÑO · IMAGEN · MOVIMIENTO</span>
+                <a href="#sobre-mi">DESCUBRIR MÁS ↓</a>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             03. SOBRE MÍ
+        ========================================== -->
+
+        <section class="about-section content-section" id="sobre-mi">
+
+            <div class="section-heading">
+
+                <span class="section-label">01 / SOBRE MÍ</span>
+
+                <h2>
+                    Ideas que conectan
+                    <span>con lo visual.</span>
+                </h2>
+
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-intro">
+
+                    <span class="about-number">01</span>
+
+                    <h3>
+                        Hola, soy Edgar Giovanni.
+                    </h3>
+
+                </div>
+
+                <div class="about-description">
+
+                    <p>
+                        Soy un creativo enfocado en transformar ideas
+                        en experiencias visuales. Mi trabajo combina
+                        diseño, comunicación y tecnología para crear
+                        propuestas con identidad propia.
+                    </p>
+
+                    <p>
+                        Este espacio reúne algunos de mis proyectos,
+                        experimentos y trabajos creativos.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="about-divider"></div>
+
+            <div class="skills-list">
+
+                <span>Diseño visual</span>
+                <span>Fotografía</span>
+                <span>Producción audiovisual</span>
+                <span>Creatividad digital</span>
+                <span>Modelado 3D</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             04. PROYECTOS
+        ========================================== -->
+
+        <section class="projects-section content-section" id="proyectos">
+
+            <div class="section-heading">
+
+                <span class="section-label">02 / PORTAFOLIO</span>
+
+                <div class="heading-flex">
+
+                    <h2>
+                        Proyectos
+                        <span>seleccionados.</span>
+                    </h2>
+
+                    <p>
+                        Una selección de trabajos y exploraciones
+                        visuales desarrolladas en diferentes disciplinas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORÍAS DE PROYECTOS -->
+
+            <div class="project-categories">
+
+                <button class="category-button active" data-filter="todos">
+                    Todos
+                </button>
+
+                <button class="category-button" data-filter="fotografia">
+                    Fotografía
+                </button>
+
+                <button class="category-button" data-filter="audiovisual">
+                    Audiovisual
+                </button>
+
+                <button class="category-button" data-filter="grafico">
+                    Diseño gráfico
+                </button>
+
+                <button class="category-button" data-filter="3d">
+                    Modelos 3D
+                </button>
+
+            </div>
+
+
+            <!-- GALERÍA DE PROYECTOS -->
+
+            <div class="projects-grid">
+
+                <!-- PROYECTO 01 -->
+
+                <article class="project-card" data-category="fotografia">
+
+                    <div class="project-image project-placeholder photography-placeholder">
+
+                        <span class="placeholder-number">01</span>
+                        <span class="placeholder-label">FOTOGRAFÍA</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <h3>Fotografía creativa</h3>
+                            <p>Fotografía / Dirección visual</p>
+                        </div>
+
+                        <span class="project-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROYECTO 02 -->
+
+                <article class="project-card" data-category="audiovisual">
+
+                    <div class="project-image project-placeholder video-placeholder">
+
+                        <span class="placeholder-number">02</span>
+                        <span class="placeholder-label">AUDIOVISUAL</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <h3>Producción audiovisual</h3>
+                            <p>Video / Edición / Narrativa visual</p>
+                        </div>
+
+                        <span class="project-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROYECTO 03 -->
+
+                <article class="project-card" data-category="grafico">
+
+                    <div class="project-image project-placeholder graphic-placeholder">
+
+                        <span class="placeholder-number">03</span>
+                        <span class="placeholder-label">DISEÑO GRÁFICO</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <h3>Identidad visual</h3>
+                            <p>Branding / Diseño gráfico</p>
+                        </div>
+
+                        <span class="project-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROYECTO 04 -->
+
+                <article class="project-card" data-category="3d">
+
+                    <div class="project-image project-placeholder model-placeholder">
+
+                        <span class="placeholder-number">04</span>
+                        <span class="placeholder-label">MODELADO 3D</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <h3>Exploración tridimensional</h3>
+                            <p>Modelado / Render / Mockups</p>
+                        </div>
+
+                        <span class="project-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             05. SERVICIOS
+        ========================================== -->
+
+        <section class="services-section content-section" id="servicios">
+
+            <div class="section-heading">
+
+                <span class="section-label">03 / SERVICIOS</span>
+
+                <h2>
+                    Lo que puedo
+                    <span>crear contigo.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="services-list">
+
+                <article class="service-item">
+
+                    <span class="service-number">01</span>
+
+                    <div class="service-description">
+                        <h3>Diseño gráfico</h3>
+                        <p>
+                            Identidad visual, composición, publicidad
+                            y comunicación gráfica.
+                        </p>
+                    </div>
+
+                    <span class="service-arrow">↗</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <span class="service-number">02</span>
+
+                    <div class="service-description">
+                        <h3>Producción audiovisual</h3>
+                        <p>
+                            Creación de contenido, edición de video
+                            y narrativas visuales.
+                        </p>
+                    </div>
+
+                    <span class="service-arrow">↗</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <span class="service-number">03</span>
+
+                    <div class="service-description">
+                        <h3>Fotografía</h3>
+                        <p>
+                            Fotografía creativa, producto y
+                            contenido visual para marcas.
+                        </p>
+                    </div>
+
+                    <span class="service-arrow">↗</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <span class="service-number">04</span>
+
+                    <div class="service-description">
+                        <h3>Contenido digital</h3>
+                        <p>
+                            Recursos visuales y contenido creativo
+                            para plataformas digitales.
+                        </p>
+                    </div>
+
+                    <span class="service-arrow">↗</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             06. CONTACTO
+        ========================================== -->
+
+        <section class="contact-section content-section" id="contacto">
+
+            <span class="section-label">04 / CONTACTO</span>
+
+            <h2>
+                ¿Creamos algo
+                <span>extraordinario?</span>
+            </h2>
+
+            <p>
+                Si tienes una idea, un proyecto o una propuesta,
+                será un gusto conversar contigo.
+            </p>
+
+            <a href="mailto:" class="contact-button" id="contact-email">
+                Hablemos de tu proyecto <span>↗</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         07. PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <a href="#inicio" class="footer-brand">
+            EDGAR GIOVANNI
+        </a>
+
+        <span>CREATIVE PORTFOLIO © 2026</span>
+
+        <a href="#inicio" class="back-to-top">
+            VOLVER ARRIBA ↑
+        </a>
+
+    </footer>
+
+
+    <!-- =========================================
+         08. LIBRERÍA 3D Y JAVASCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
